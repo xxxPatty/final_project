@@ -95,7 +95,7 @@ struct restaurantEditor:View{
                     Button(action: {
                         //先透過google maps api將地址轉成經緯度
                         if addr != "地址" && !addr.isEmpty{
-                            let urlStr = "https://maps.googleapis.com/maps/api/geocode/json?address=\(addr) E-Square&key=AIzaSyBPVZM0o_QRqGYkCYjbWHl0Z8q0wxTGi1Y".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                            let urlStr = "https://maps.googleapis.com/maps/api/geocode/json?address=\(addr) E-Square&key=Your API Key".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                             if let url = URL(string: urlStr!) {
                                 URLSession.shared.dataTask(with: url) { (data, response , error) in
                                     let decoder = JSONDecoder()
