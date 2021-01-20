@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var restaurantData=restaurantInfoData()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView{
+            SearchFood()
+                .tabItem{
+                    Image(systemName:"magnifyingglass")
+                    Text("Search")
+                }
+            restaurantList(restaurantData:restaurantData)
+                .tabItem{
+                    Image(systemName:"pencil")
+                    Text("Records")
+                }
+            MapView2(restaurantData:restaurantData)
+                .tabItem{
+                    Image(systemName:"mappin.and.ellipse")
+                    Text("Map")
+                }
+            RocommandView(restaurantData:restaurantData)
+                .tabItem{
+                    Image(systemName:"heart")
+                    Text("For you")
+                }
+        }.accentColor(Color.pink)
     }
 }
 
