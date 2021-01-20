@@ -32,7 +32,7 @@ struct SearchFood:View{
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 200)
                         Button("搜尋"){
-                            let urlStr = "https://www.googleapis.com/customsearch/v1?cx=49ea75e339e740b13&key=AIzaSyAmvRNAu83MEI8q4S0HcOTyr3lQZfJ8z7o&q=\(city)美食\(timeRange[selectedIndex])排行榜&siteSearch=ifoodie.tw".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                            let urlStr = "https://www.googleapis.com/customsearch/v1?cx=Your cx&key=Your API Key&q=\(city)美食\(timeRange[selectedIndex])排行榜&siteSearch=ifoodie.tw".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                             if let url = URL(string: urlStr!) {
                                 URLSession.shared.dataTask(with: url) { (data, response , error) in
                                     let decoder = JSONDecoder()
